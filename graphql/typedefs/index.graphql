@@ -3,15 +3,15 @@ scalar Date
 
 type Query {
   # Books
-  books(params: QueryParams): Books!
+  books: [Book]!
   book(id: ID!): Book
 
   # Author
-  authors(params: QueryParams): Authors!
+  authors: [Author]!
   author(id: ID!): Author
 
   # Publisher
-  publishers(params: QueryParams): Publishers!
+  publishers: [Publisher]!
   publisher(id: ID!): Publisher
 }
 
@@ -23,7 +23,7 @@ type Mutation {
   # Authors
   createAuthor(author: AuthorCreateInput!): Author!
   updateAuthor(id: ID!, author: AuthorUpdateInput!): Author!
-  addAuthorToPublisher(id: ID!, publisher: ID!): Author! 
+  addAuthorToPublisher(id: ID!, publisher: ID!): Author!
 
   # Publishers
   createPublisher(publisher: PublisherCreateInput!): Publisher!

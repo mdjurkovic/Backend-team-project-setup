@@ -1,5 +1,5 @@
 # Types
-type Publisher implements Timestamps { 
+type Publisher implements Timestamps {
   id: ID!
   name: String!
   authors: [Author]
@@ -7,11 +7,6 @@ type Publisher implements Timestamps {
   # Interface required
   createdAt: Date!
   updatedAt: Date!
-}
-
-type Publishers {
-  info: Info!
-  results: [Publisher]!
 }
 
 # Inputs

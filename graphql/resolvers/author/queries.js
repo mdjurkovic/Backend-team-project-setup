@@ -1,8 +1,11 @@
+import {Author} from '../../../db/models';
+
 const authorQueries = {
-    authors: async (_, {params = {page: 1, pageSize: 20}}, {loaders}) => {
-        return {};
+    authors: async (_, args) => {
+        return await Author.find();
     },
-    author: async (_, {id}, {loaders}) => {
+    author: async (_, {id}) => {
+        return Author.findById(id);
     }
 };
 
