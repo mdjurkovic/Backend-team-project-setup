@@ -1,6 +1,7 @@
 import {port} from './config/environment';
 import express from 'express';
 import graphqlServer from './graphql';
+import connectDB from './db';
 
 const app = express();
 
@@ -9,8 +10,12 @@ try {
         graphqlServer.applyMiddleware({
             app,
         });
-        app.listen(port);
-        console.log(`🚀  GraphQL server running at port: ${port}/graphql`);
+        console.log("Connecting to db");
+        connectDB().then(r => {
+            console.log("Connected to db");
+            app.listen(port);
+            console.log(`🚀  GraphQL server running at port: ${port}/graphql`);
+        });
     });
 } catch {
     console.log('Not able to run GraphQL server');

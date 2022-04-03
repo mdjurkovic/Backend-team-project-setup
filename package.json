@@ -19,6 +19,7 @@
     "apollo-server-express": "^3.6.7",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
-    "graphql": "^16.3.0"
+    "graphql": "^16.3.0",
+    "mongoose": "^6.2.9"
   }
 }
