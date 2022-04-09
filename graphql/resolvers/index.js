@@ -18,6 +18,12 @@ const resolvers = {
         ...bookMutations,
         ...publisherMutations,
     },
+    ...authorFields,
+    ...bookFields,
+    ...publisherFields,
+    Book: {
+        author: (book) => Author.findById(book.author)
+    }
 };
 
 export default resolvers;

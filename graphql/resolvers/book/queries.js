@@ -1,8 +1,13 @@
-import {Book} from '../../../db/models';
+import {Author, Book} from '../../../db/models';
 
 const bookQueries = {
-    books: async (_, {params = {page: 1, pageSize: 20}}, {loaders}) => {
-        return await Book.find();
+    books: async (_, args) => {
+        const books = await Book.find();
+
+        return books.map(book => ({
+            ...book,
+            author: () => Author.findById(book.author)
+        }));
     },
     book: async (_, {id}, {loaders}) => {
         return Book.findById(id);
