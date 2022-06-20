@@ -13,6 +13,30 @@ type Query {
   # Publisher
   publishers: [Publisher]!
   publisher(id: ID!): Publisher
+
+  # Country
+  countries: [Country]!
+  country(id: ID!): Country
+
+  # Destination
+  destinations: [Destination]!
+  destination(id: ID!): Destination
+
+  # DestinationType
+  destinationTypes: [DestinationType]!
+  destinationType(id: ID!): DestinationType
+
+  # Guider
+  guiders: [Guider]!
+  guider(id: ID!): Guider
+
+  # Excursion
+  excursions: [Excursion]!
+  excursion(id: ID!): Excursion
+
+  # Tour
+  tours: [Tour]!
+  tour(id: ID!): Tour
 }
 
 type Mutation {
@@ -28,4 +52,29 @@ type Mutation {
   # Publishers
   createPublisher(publisher: PublisherCreateInput!): Publisher!
   updatePublisher(id: ID!, publisher: PublisherUpdateInput!): Publisher!
+
+  # Countries
+  createCountry(country: CountryCreateInput!): Country!
+  updateCountry(id: ID!, country: CountryUpdateInput!): Country!
+
+  # Destinations
+  createDestination(destination: DestinationCreateInput!): Destination!
+  updateDestination(id: ID!, destination: DestinationUpdateInput!): Destination!
+  addDestinationTypeToDestination(id: ID!, destinationType: ID!): Destination!
+
+  # DestinationTypes
+  createDestinationType(destinationType: DestinationTypeCreateInput!): DestinationType!
+  updateDestinationType(id: ID!, destinationType: DestinationTypeUpdateInput!): DestinationType!
+
+  # Excursions
+  createExcursion(excursion: ExcursionCreateInput!): Excursion!
+  updateExcursion(id: ID!, excursion: ExcursionUpdateInput!): Excursion!
+
+  # Guiders
+  createGuider(guider: GuiderCreateInput!): Guider!
+  updateGuider(id: ID!, guider: GuiderUpdateInput!): Guider!
+
+  # Tours
+  createTour(tour: TourCreateInput!): Tour!
+  updateTour(id: ID!, tour: TourUpdateInput!): Tour!
 }
