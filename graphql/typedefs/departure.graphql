@@ -1,0 +1,23 @@
+# Types
+type Departure implements Timestamps {
+    id: ID!
+    departure_date: Date!
+    return_date: Date!
+    guider: Guider
+    tour: Tour
+
+    # Interface required
+    createdAt: Date!
+    updatedAt: Date!
+}
+
+# Inputs
+input DepartureCreateInput {
+    departure_date: Date!
+    return_date: Date!
+}
+
+input DepartureUpdateInput {
+    departure_date: Date
+    return_date: Date
+}

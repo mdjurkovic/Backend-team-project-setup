@@ -1,0 +1,19 @@
+# Types
+type DestinationType implements Timestamps {
+  id: ID!
+  label: String!
+  destinations: [Destination]
+
+  # Interface required
+  createdAt: Date!
+  updatedAt: Date!
+}
+
+# Inputs
+input DestinationTypeCreateInput {
+  name: String!
+}
+
+input DestinationTypeUpdateInput {
+  name: String
+}

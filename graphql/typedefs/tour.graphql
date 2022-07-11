@@ -1,0 +1,20 @@
+# Types
+type Tour implements Timestamps {
+    id: ID!
+    name: String!
+    destination: Destination
+    guider: Guider
+
+    # Interface required
+    createdAt: Date!
+    updatedAt: Date!
+}
+
+# Inputs
+input TourCreateInput {
+    name: String!
+}
+
+input TourUpdateInput {
+    name: String
+}

@@ -1,0 +1,19 @@
+# Types
+type Country implements Timestamps {
+  id: ID!
+  name: String!
+  destinations: [Destination]
+
+  # Interface required
+  createdAt: Date!
+  updatedAt: Date!
+}
+
+# Inputs
+input CountryCreateInput {
+  name: String!
+}
+
+input CountryUpdateInput {
+  name: String
+}

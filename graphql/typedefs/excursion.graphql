@@ -1,0 +1,23 @@
+# Types
+type Excursion implements Timestamps {
+  id: ID!
+  name: String!
+  description: String
+  price: String
+  destination: Destination
+
+  # Interface required
+  createdAt: Date!
+  updatedAt: Date!
+}
+
+# Inputs
+input ExcursionCreateInput {
+  name: String!
+  description: String!
+  price: String!
+}
+
+input ExcursionUpdateInput {
+  name: String
+}

@@ -1,0 +1,23 @@
+# Types
+type Destination implements Timestamps {
+    id: ID!
+    name: String!
+    destinationTypes: [DestinationType]!
+    excursions: [Excursion]
+    tours: [Tour]
+    country: Country
+
+    # Interface required
+    createdAt: Date!
+    updatedAt: Date!
+}
+
+# Inputs
+input DestinationCreateInput {
+    name: String!
+    country: ID!
+}
+
+input DestinationUpdateInput {
+    name: String
+}
