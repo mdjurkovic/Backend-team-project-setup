@@ -2,79 +2,64 @@
 scalar Date
 
 type Query {
-  # Books
-  books: [Book]!
-  book(id: ID!): Book
 
-  # Author
-  authors: [Author]!
-  author(id: ID!): Author
+    # Country
+    countries: [Country]!
+    country(id: ID!): Country
 
-  # Publisher
-  publishers: [Publisher]!
-  publisher(id: ID!): Publisher
+    # Destination
+    destinations: [Destination]!
+    destination(id: ID!): Destination
 
-  # Country
-  countries: [Country]!
-  country(id: ID!): Country
+    # DestinationType
+    destinationTypes: [DestinationType]!
+    destinationType(id: ID!): DestinationType
 
-  # Destination
-  destinations: [Destination]!
-  destination(id: ID!): Destination
+    # Guider
+    guiders: [Guider]!
+    guider(id: ID!): Guider
 
-  # DestinationType
-  destinationTypes: [DestinationType]!
-  destinationType(id: ID!): DestinationType
+    # Excursion
+    excursions: [Excursion]!
+    excursion(id: ID!): Excursion
 
-  # Guider
-  guiders: [Guider]!
-  guider(id: ID!): Guider
+    # Tour
+    tours: [Tour]!
+    tour(id: ID!): Tour
 
-  # Excursion
-  excursions: [Excursion]!
-  excursion(id: ID!): Excursion
-
-  # Tour
-  tours: [Tour]!
-  tour(id: ID!): Tour
+    # Departure
+    departures: [Departure]
+    departure(departure_date: Date!): Departure
 }
 
 type Mutation {
-  # Books
-  createBook(book: BookCreateInput!): Book!
-  updateBook(id: ID!, book: BookUpdateInput!): Book!
 
-  # Authors
-  createAuthor(author: AuthorCreateInput!): Author!
-  updateAuthor(id: ID!, author: AuthorUpdateInput!): Author!
-  addAuthorToPublisher(id: ID!, publisher: ID!): Author!
+    # Countries
+    createCountry(country: CountryCreateInput!): Country!
+    updateCountry(id: ID!, country: CountryUpdateInput!): Country!
 
-  # Publishers
-  createPublisher(publisher: PublisherCreateInput!): Publisher!
-  updatePublisher(id: ID!, publisher: PublisherUpdateInput!): Publisher!
+    # Destinations
+    createDestination(destination: DestinationCreateInput!): Destination!
+    updateDestination(id: ID!, destination: DestinationUpdateInput!): Destination!
+    addDestinationTypeToDestination(id: ID!, destinationType: ID!): Destination!
 
-  # Countries
-  createCountry(country: CountryCreateInput!): Country!
-  updateCountry(id: ID!, country: CountryUpdateInput!): Country!
+    # DestinationTypes
+    createDestinationType(destinationType: DestinationTypeCreateInput!): DestinationType!
+    updateDestinationType(id: ID!, destinationType: DestinationTypeUpdateInput!): DestinationType!
 
-  # Destinations
-  createDestination(destination: DestinationCreateInput!): Destination!
-  updateDestination(id: ID!, destination: DestinationUpdateInput!): Destination!
-  addDestinationTypeToDestination(id: ID!, destinationType: ID!): Destination!
+    # Excursions
+    createExcursion(excursion: ExcursionCreateInput!): Excursion!
+    updateExcursion(id: ID!, excursion: ExcursionUpdateInput!): Excursion!
 
-  # DestinationTypes
-  createDestinationType(destinationType: DestinationTypeCreateInput!): DestinationType!
-  updateDestinationType(id: ID!, destinationType: DestinationTypeUpdateInput!): DestinationType!
+    # Guiders
+    createGuider(guider: GuiderCreateInput!): Guider!
+    updateGuider(id: ID!, guider: GuiderUpdateInput!): Guider!
 
-  # Excursions
-  createExcursion(excursion: ExcursionCreateInput!): Excursion!
-  updateExcursion(id: ID!, excursion: ExcursionUpdateInput!): Excursion!
+    # Tours
+    createTour(tour: TourCreateInput!): Tour!
+    updateTour(id: ID!, tour: TourUpdateInput!): Tour!
 
-  # Guiders
-  createGuider(guider: GuiderCreateInput!): Guider!
-  updateGuider(id: ID!, guider: GuiderUpdateInput!): Guider!
-
-  # Tours
-  createTour(tour: TourCreateInput!): Tour!
-  updateTour(id: ID!, tour: TourUpdateInput!): Tour!
+    # Departure
+    createDeparture(departure: DepartureCreateInput!): Departure!
+    updateDeparture(id: ID!, departure: DepartureUpdateInput!): Departure!
 }
